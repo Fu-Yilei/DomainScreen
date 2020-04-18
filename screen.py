@@ -4,6 +4,9 @@ import os
 
 
 def get_seq(orf_input, domain_seq, output_path):
+    """
+    Get sequence result from domain input
+    """
     orf_seq_list = SeqIO.parse(orf_input, "fasta")
     orf_contain_domain = []
     for orf_seq in orf_seq_list:
@@ -14,6 +17,9 @@ def get_seq(orf_input, domain_seq, output_path):
 
 
 def parse_domain_list(domain_file):
+    """
+    Parse domain input file
+    """
     with open(domain_file) as domain_f:
         domains = domain_f.readlines()
     do_new = []
@@ -23,6 +29,9 @@ def parse_domain_list(domain_file):
     return do_new
 
 def parse_args():
+    """
+    parse args
+    """
     parser = argparse.ArgumentParser(
         prog="Domain Screener",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
