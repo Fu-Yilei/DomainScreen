@@ -26,6 +26,8 @@ def parse_domain_list(domain_file):
     for domain_seq in domains:
         if domain_seq[-1] == "\n":
             do_new.append(domain_seq[:-1])
+        else:
+            do_new.append(domain_seq)
     return do_new
 
 def parse_args():
